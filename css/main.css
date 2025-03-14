@@ -1,0 +1,235 @@
+:root {
+  /* Основные цвета */
+  --blue: #0077FF;
+  --white: #FFFFFF;
+  --yellow: #FFF500;
+  --pink-main: #D900C6;
+  --reserv-grey: #999999;
+  --grey-txt-navi: #7A7C7E;
+  --dark-contrast: #222629;
+  --grey-txt: #A6A8A9;
+  --dark-main: #303437;
+  --black: #141414;
+  --orange-reserv: #FFAE00;
+
+  /* Градиент */
+  --pink-gradient-lite: linear-gradient(90deg, #D900C6 0%, #B500D9 100%);
+}
+
+
+@font-face {
+  font-family: 'Alexis';
+  src: url('fonts\alexis-19.woff') format('woff'),
+       url('fonts\alexis-19.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Alexis';
+  src: url('fonts\Gilroy-Black.woff') format('woff'),
+       url('fonts\Gilroy-Black.woff2') format('woff2');
+}
+
+.golden {
+  min-height: 800px;
+  background-color: var(--black);
+  position: relative;
+  z-index: 1;
+}
+
+.golden::after {
+    left: 0;
+    top: 0;
+    content: '';
+    position: absolute;
+    z-index: 11;
+    background-image: url("./images/bggold.svg");
+    background-size: 1200px 680px;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Основной фон для всего сайта */
+body {
+  background-color: var(--black); 
+  margin: 0; 
+  font-family: Gilroy, sans-serif; 
+  color: var(--black); 
+}
+
+
+
+/* Wrapper для десктопов и мобильных устройств */
+.wrapper {
+max-width: 1440px; /* Максимальная ширина для десктопов */
+margin: 0 auto; /* Центрирование */
+padding: 32px, 180px; /* Внешние отступы для десктопов */
+}
+
+
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 430px) {
+.wrapper {
+  max-width: 430px; /* Максимальная ширина для мобильных устройств */
+  padding: 0 40px; /* Внешние отступы для мобильных устройств */
+}
+}
+
+/* Стили для хэдера */
+.header {
+width: 800px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 32px;
+}
+
+/* Логотип */
+.logo {
+height: 40px; /* Высота логотипа */
+}
+
+
+/* Кнопки */
+.buttons {
+display: flex;
+gap: 16px;
+}
+
+.cta-button {
+padding: 10px 20px;
+font-family: 'Gilroy', sans-serif;
+font-weight: 500;
+font-size: 18px;
+color: var(--black);
+background-color: var(--white);
+border: 2px solid white;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.cta-button.secondary {
+  padding: 10px 20px;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+background-color: var(--pink-main);
+color: var(--white);
+border-color: var(--pink-main);
+box-shadow: var(--pink-main);
+box-shadow: 0px 4px 20px #681861;
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--black);
+  background-color: 0.01;
+  color: var(--pink-main);
+  border-color: var(--pink-main);
+  box-shadow: 0px 4px 20px #681861;
+}
+
+.cta-button:active {
+transform: scale(0.95);
+}
+
+.cta-button.secondary:active {
+transform: scale(0.95);
+}
+
+.H1 {
+position: absolute;
+margin-top: 120px;;
+top: 10%;
+left: 10%;
+transform: translate(-10%, -10%);
+width: 1080px;
+height: auto;
+left: 140px;
+top: 183px;
+
+font-family: 'Alexis';
+font-style: italic;
+font-weight: 900;
+font-size: 120px;
+line-height: 100%;
+text-align: center;
+
+/* White */
+color: #FFFFFF;
+text-shadow: 5px, 5px, var(--pink-main) ;
+}
+
+
+.subtitle {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 16px;
+
+position: absolute;
+width: 393px;
+height: 66px;
+left: 175.1px;
+top: 151px;
+
+/* Yellow */
+background: #FFF500;
+border-radius: 50px;
+transform: rotate(2.69deg);
+
+
+/* NEW COMPETITION */
+
+width: 361px;
+height: 50px;
+
+font-family: 'Gilroy';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 50px;
+
+/* Black */
+color: #141414;
+
+transform: rotate(2.69deg);
+}
+
+
+/* Направляющая слева */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 180px; /* Отступ слева */
+  width: 1px;
+  height: 100%;
+  background-color: rgb(5, 20, 120);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* Направляющая справа */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 180px; /* Отступ справа */
+  width: 1px;
+  height: 100%;
+  background-color: rgb(255, 0, 0); /* Другой цвет для второй линии */
+  z-index: 9999;
+  pointer-events: none;
+}
