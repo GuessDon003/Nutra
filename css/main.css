@@ -212,7 +212,7 @@ body {
   
       .footer-nav {
           flex-direction: column;
-          gap: 1;
+          gap: 1px;
           justify-content: space-between;
           align-items: center;
           width: 100%;
